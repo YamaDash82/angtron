@@ -1,5 +1,6 @@
 {
   "name": "work-space",
+  "productName": "my-angtron-app", 
   "version": "0.0.0",
   "author": "akdeveloper1978",
   "description": "ak first electron app.",
