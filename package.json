@@ -1,20 +1,21 @@
 {
   "name": "work-space",
-  "productName": "my-angtron-app", 
+  "productName": "my-angtron-app",
   "version": "0.0.0",
   "author": "akdeveloper1978",
   "description": "ak first electron app.",
   "scripts": {
     "ng": "ng",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
+    "build": "npm-run-all -s build:el build:ng",
     "test": "ng test",
+    "serve": "npm-run-all -p serve:ng serve-watch:el", 
     "start:el": "electron .",
     "serve:el": "electron . --development",
     "build:el": "tsc --build projects/main/tsconfig.json",
     "watch:el": "tsc --build --watch projects/main/tsconfig.json",
+    "serve-watch:el": "wait-on tcp:4200 && npm-run-all -p watch:el serve:el", 
     "build:ng": "ng build --configuration production --base-href ./",
-    "watch:ng": "ng serve",
+    "serve:ng": "ng serve",
     "start": "electron-forge start",
     "package": "electron-forge package",
     "make": "electron-forge make"
@@ -54,6 +55,8 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
-    "typescript": "~4.9.4"
+    "npm-run-all": "^4.1.5",
+    "typescript": "~4.9.4",
+    "wait-on": "^7.0.1"
   }
 }
