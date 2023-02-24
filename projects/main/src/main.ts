@@ -1,13 +1,17 @@
 import { app, BrowserWindow, ipcMain } from "electron";
 import * as path from "path";
+import * as fs from 'fs';
 import debug from 'electron-debug';
-/*
-require('electron-reload')(path.join(__dirname))
-*/
+import electronReloader from "electron-reloader";
+
+const loadUsers = async (): Promise<{ userId: number, userName: string }[]> => {
+  const loadData = JSON.parse(fs.readFileSync(path.join(__dirname, './users.json'), 'utf-8')) as { userId: number, userName: string }[];
+
+  return loadData;
+};
 
 function createWindow() {
   const isDevMode: boolean = !!process.argv.find(val => val === '--development');
-  console.log(`isDevMode:${isDevMode}!!(^^;`);
   
   const win = new BrowserWindow({
     height: 600,
@@ -21,13 +25,11 @@ function createWindow() {
     //開発モード
     //electron-debugツールを実行する。
     debug();
-    //electron-reloaderを実行する。
-    //electronReloader(module, { 
-    ///  watchRenderer: false //レンダラー側の変更は監視しない。
-    //});
+    
     try {
-      require('electron-reloader')(module, {
-        watchRenerer: false //レンダラー側の変更は監視しない。
+      //electron-reloaderを実行する。
+      electronReloader(module, { 
+        watchRenderer: false //レンダラー側の変更は監視しない。
       });
     } catch { }
 
@@ -42,6 +44,8 @@ function createWindow() {
 }
 
 app.whenReady().then(async () => {
+  //users.jsonをロードする。
+  ipcMain.handle('loadUsers', loadUsers);
 
   createWindow();
 
