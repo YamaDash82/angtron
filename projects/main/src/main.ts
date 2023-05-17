@@ -5,7 +5,7 @@ import debug from 'electron-debug';
 import electronReloader from "electron-reloader";
 
 const loadUsers = async (): Promise<{ userId: number, userName: string }[]> => {
-  const loadData = JSON.parse(fs.readFileSync(path.join(__dirname, './users.json'), 'utf-8')) as { userId: number, userName: string }[];
+  const loadData = JSON.parse(fs.readFileSync(path.join(__dirname, '../mock', './users.json'), 'utf-8')) as { userId: number, userName: string }[];
 
   return loadData;
 };
