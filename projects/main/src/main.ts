@@ -8,6 +8,9 @@ import electronReloader from "electron-reloader";
 //参考URL:https://www.electronforge.io/config/makers/squirrel.windows
 if (require('electron-squirrel-startup')) app.quit();
 
+//自動アップデートに対応
+require('update-electron-app')();
+
 const loadUsers = async (): Promise<{ userId: number, userName: string }[]> => {
   const loadData = JSON.parse(fs.readFileSync(path.join(__dirname, '../mock', './users.json'), 'utf-8')) as { userId: number, userName: string }[];
 
