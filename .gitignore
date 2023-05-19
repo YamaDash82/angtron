@@ -43,3 +43,6 @@ Thumbs.db
 
 # Electronのビルド結果を除外する。
 /out
+
+# 環境変数を除外する
+.env
