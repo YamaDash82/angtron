@@ -12,4 +12,17 @@ module.exports = {
       },
     }
   ],
+  publishers: [
+    {
+      name: '@electron-forge/publisher-github', 
+      config: {
+        repository: {
+          owner: 'AKDeveloper1978', 
+          name: 'angtron'
+        }, 
+        prerelease: false,
+        draft: true, 
+      }, 
+    }, 
+  ], 
 };
