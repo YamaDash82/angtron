@@ -1,7 +1,7 @@
 {
   "name": "my-angtron-app",
   "productName": "my-angtron-app",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "akdeveloper1978",
   "description": "ak first electron app.",
   "scripts": {
@@ -18,7 +18,7 @@
     "serve:ng": "ng serve",
     "start": "electron-forge start",
     "package": "electron-forge package",
-    "make": "electron-forge make", 
+    "make": "electron-forge make",
     "publish": "electron-forge publish"
   },
   "main": "dist/main.js",
