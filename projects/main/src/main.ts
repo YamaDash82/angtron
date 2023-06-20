@@ -26,6 +26,8 @@ function createWindow() {
       preload: path.join(__dirname, "preload.js"),
     },
     width: 800,
+    //icon: path.join(__dirname, 'assets/icon/icon.ico'), 
+    icon: path.join(__dirname, '../assets/icon/icon.ico')
   });
 
   if (isDevMode) {

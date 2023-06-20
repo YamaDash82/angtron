@@ -1,16 +1,24 @@
+const path = require('path');
+
 module.exports = {
   packagerConfig: {
-    icon: 'assets/icon/icon'
+    icon: path.join(__dirname, './assets/icon/icon'), 
   },
   rebuildConfig: {},
   makers: [
     {
       name: '@electron-forge/maker-squirrel',
       config: {
-        authors: 'YamaDash82', 
-        description: 'ヤマダッシュ製Electronアプリケーション'
+        authors: 'hogehoge_forge_config', 
+        description: 'Angtronサンプルアプリケーション', 
+        setupIcon: path.join(__dirname, './assets/icon/icon.ico'), 
       },
+    },
+    /*
+    {
+      name: '@electron-forge/maker-zip'
     }
+    */
   ],
   publishers: [
     {

@@ -177,5 +177,7 @@ From Hello With Electron(^^)V
     ![使用例](documents/images/image02.png)  
 
 
+## 参考URL
+- [Squirrel Startup Exe Icon missing #1790](https://github.com/Squirrel/Squirrel.Windows/issues/1790)  
   
 以上
