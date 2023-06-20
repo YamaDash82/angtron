@@ -1,7 +1,7 @@
 {
   "name": "my-angtron-app-name",
   "productName": "myAngtronApp",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "author": "hoeghoge company",
   "description": "ak first electron app.",
   "scripts": {
